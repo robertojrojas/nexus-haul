@@ -1,0 +1,7 @@
+{
+    "sourceURL":"http://zeus:18081/nexus/service/local/repositories/cocuyo_3rd_party/index_content/",
+    "sourceDownloadURL":"http://zeus:18081/nexus/content/repositories/cocuyo_3rd_party/",
+    "targetURL":"http://zeus:18083/repository/cocuyo_3rd_party/",
+    "workers": 2
+    
+}
