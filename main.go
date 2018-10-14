@@ -58,16 +58,16 @@ type confInfo struct {
 	authFile   authFile
 }
 
-var nexusMigratorConfigFile string
-var nexusMigratorAuthFile string
+var nexusHaulConfigFile string
+var nexusHaulAuthFile string
 
 var af authFile
 var cf configFile
 var ci confInfo
 
 func init() {
-	flag.StringVar(&nexusMigratorConfigFile, "migratorConfFile", "./migrator-conf.json", "File (JSON) containing configuration for the Nexus Artifact Migrator.")
-	flag.StringVar(&nexusMigratorAuthFile, "migratorAuthFile", "./migrator-auth.json", "File (JSON) containing authentication for the Nexus servers accessed by the Artifact Migrator.")
+	flag.StringVar(&nexusHaulConfigFile, "nexusHaulConfFile", "./nexus-haul-conf.json", "File (JSON) containing configuration for the Nexus Artifact Haul.")
+	flag.StringVar(&nexusHaulAuthFile, "nexusHaulAuthFile", "./nexus-haul-auth.json", "File (JSON) containing authentication for the Nexus servers accessed by the Artifact Haul.")
 
 }
 
@@ -112,7 +112,7 @@ func processConfigAndAuthFiles() error {
 	cf = configFile{}
 	af = authFile{}
 
-	data, err := readFile(nexusMigratorConfigFile)
+	data, err := readFile(nexusHaulConfigFile)
 	if err != nil {
 		return err
 	}
@@ -122,7 +122,7 @@ func processConfigAndAuthFiles() error {
 		return err
 	}
 
-	data, err = readFile(nexusMigratorAuthFile)
+	data, err = readFile(nexusHaulAuthFile)
 	if err != nil {
 		return err
 	}
